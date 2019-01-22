@@ -10,7 +10,7 @@ mkdir -p $CACHE
 fi
 
 function GET_STATION(){
-curl -s "http://ws.bus.go.kr/api/rest/stationinfo/getLowStationByName?ServiceKey=0qek1QTehLrygmI%2BhlB0AAnqZhKrZ9bXdXUNgaFng9TW%2BYWSmblsO1QOt2NKiXiz7GXSF0jevRiaovPaX68vXA%3D%3D&stSrch=KT" | xmllint --format - > $CACHE/station_info
+curl -s "http://ws.bus.go.kr/api/rest/stationinfo/getLowStationByName?ServiceKey=0qek1QTehLrygmI%2BhlB0AAnqZhKrZ9bXdXUNgaFng9TW%2BYWSmblsO1QOt2NKiXiz7GXSF0jevRiaovPaX68vXA%3D%3D&stSrch="$1"" | xmllint --format - > $CACHE/station_info
 awk -F '[<>]' '/arsId/{print $3}' $CACHE/station_info > $CACHE/station_arsId
 awk -F '[<>]' '/stNm/{print $3}' $CACHE/station_info > $CACHE/station_stNm
 }
@@ -53,3 +53,5 @@ echo "============================================
 "
 RESULT_COUNT=$((RESULT_COUNT+1))
 done
+
+rm $CACHE/*
