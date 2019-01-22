@@ -46,7 +46,7 @@ for RESULT in $(cat $CACHE/bus_location_rtNm)
 do
 echo "============================================
 = 노선명: $RESULT
-= 버스종류: $(head -n $RESULT_COUNT $CACHE/bus_location_rtNm | tail -1)
+= 버스종류: $(head -n $RESULT_COUNT $CACHE/bus_location_rtTpNm | tail -1)
 = 첫번째 버스: $(head -n $RESULT_COUNT $CACHE/bus_location_arrmsg1 | tail -1) 도착
 = 두번째 버스: $(head -n $RESULT_COUNT $CACHE/bus_location_arrmsg1 | tail -1) 도착
 ============================================
