@@ -20,7 +20,7 @@ curl -s "http://bus.go.kr/xmlRequest/getStationByUid.jsp?strBusNumber="$1""> $CA
 awk -F '[<>]' '/rtNm/{print $3}' $CACHE/bus_location_info > $CACHE/bus_location_rtNm
 awk -F '[<>]' '/rtTpNm/{print $3}' $CACHE/bus_location_info > $CACHE/bus_location_rtTpNm
 awk -F '[<>]' '/arrmsg1/{print $3}' $CACHE/bus_location_info > $CACHE/bus_location_arrmsg1
-awk -F '[<>]' '/arrmsg2/{print $3}' $CACHE/bus_location_info > $CACHE/bus_location_arrmsg1
+awk -F '[<>]' '/arrmsg2/{print $3}' $CACHE/bus_location_info > $CACHE/bus_location_arrmsg2
 }
 
 read -p "! 버스 정류소 검색: " STATION_NAME
