@@ -28,6 +28,11 @@ echo "@ 정류소 정보 불러오는 중..."
 GET_STATION "$STATION_NAME"
 echo
 RESULT_COUNT=1
+if [ "$(cat $CACHE/station_stNm)" = "" ]
+then
+echo "# 검색결과가 없습니다."
+exit 0
+fi
 for RESULT in $(cat $CACHE/station_stNm)
 do
 echo "! $RESULT_COUNT. $RESULT"
