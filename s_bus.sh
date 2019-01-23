@@ -48,7 +48,7 @@ echo "============================================
 = 노선명: $RESULT
 = 버스종류: $(head -n $RESULT_COUNT $CACHE/bus_location_rtTpNm | tail -1)
 = 첫번째 버스: $(head -n $RESULT_COUNT $CACHE/bus_location_arrmsg1 | tail -1)
-= 두번째 버스: $(head -n $RESULT_COUNT $CACHE/bus_location_arrmsg1 | tail -1)
+= 두번째 버스: $(head -n $RESULT_COUNT $CACHE/bus_location_arrmsg2 | tail -1)
 ============================================
 "
 RESULT_COUNT=$((RESULT_COUNT+1))
